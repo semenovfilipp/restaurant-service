@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-categories-table
+      author: Filipp
+      changes:
+        - createTable:
+            tableName: categories
+            columns:
+              - column:
+                  name: category_id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+            primaryKey:
+              columnNames:
+                - category_id

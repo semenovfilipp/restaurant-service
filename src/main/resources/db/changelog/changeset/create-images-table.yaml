@@ -1,0 +1,31 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-images-table
+      author: Filipp
+      changes:
+        - createTable:
+            tableName: images
+            columns:
+              - column:
+                  name: image_id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: image_name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: image_type
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: image_data
+                  type: BLOB
+                  constraints:
+                    nullable: true
+                    length: 1000

@@ -1,0 +1,92 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-products-table
+      author: Filipp
+      changes:
+        - createTable:
+            tableName: products
+            columns:
+              - column:
+                  name: product_id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: VARCHAR(1000)
+              - column:
+                  name: price
+                  type: DOUBLE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: category_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_product_category
+                    references: categories(category_id)
+                    nullable: false
+            primaryKey:
+              columnNames:
+                - product_id
+            foreignKeyConstraints:
+              - foreignKeyConstraint:
+                  baseTableName: products
+                  baseColumnNames:
+                    - category_id
+                  referencedTableName: categories
+                  referencedColumnNames:
+                    - category_id
+                  name: fk_product_category
+
+  - changeSet:
+      id: create-order-items-table
+      author: Filipp
+      changes:
+        - createTable:
+            tableName: order_items
+            columns:
+              - column:
+                  name: order_item_id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: order_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: product_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: quantity
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: DOUBLE
+                  constraints:
+                    nullable: false
+
+        - addForeignKeyConstraint:
+            baseTableName: order_items
+            baseColumnNames: product_id
+            constraintName: fk_order_item_product
+            referencedTableName: products
+            referencedColumnNames: product_id
+            onDelete: CASCADE
+            onUpdate: CASCADE
+

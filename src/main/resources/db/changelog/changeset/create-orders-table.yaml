@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-orders-table
+      author: Filipp
+      changes:
+        - createTable:
+            tableName: orders
+            columns:
+              - column:
+                  name: order_id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: created_by
+                  type: VARCHAR(255)
+              - column:
+                  name: user_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_order_user
+                    references: users(user_id)
+              - column:
+                  name: order_status
+                  type: VARCHAR(255)
+
