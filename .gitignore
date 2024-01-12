@@ -1,4 +1,9 @@
-HELP.md
+.idea/
+.mvn/
+target/
+mvnw
+mvnw.cmd
+
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
