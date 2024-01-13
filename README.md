@@ -47,14 +47,14 @@ Framework for Java-based application development with a focus on convention over
 configuration.
 
 - **Spring Data JPA**: Part of the Spring Data project, providing convenient abstractions for working
-- with databases using JPA (Java Persistence API).
+with databases using JPA (Java Persistence API).
 
 - **PostgreSQL Driver**: Driver enabling communication with the PostgreSQL database.
 
 - **Spring Web**: A module in the Spring framework that facilitates the development of web applications.
 
 - **Project Lombok**: A library simplifying Java development by automatically generating methods
-- such as getters, setters, and constructors.
+such as getters, setters, and constructors.
 
 - **Spring Boot Starter Test**: Dependency set for testing Spring Boot applications.
 
