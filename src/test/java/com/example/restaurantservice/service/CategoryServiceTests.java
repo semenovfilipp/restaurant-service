@@ -2,11 +2,11 @@ package com.example.restaurantservice.service;
 
 import com.example.restaurantservice.dto.CategoryDto;
 import com.example.restaurantservice.dto.ProductDto;
-import com.example.restaurantservice.exception.not_found.CategoryNotFoundException;
-import com.example.restaurantservice.mapper.CategoryMapper;
 import com.example.restaurantservice.entity.Category;
 import com.example.restaurantservice.entity.Image;
 import com.example.restaurantservice.entity.Product;
+import com.example.restaurantservice.exception.not_found.CategoryNotFoundException;
+import com.example.restaurantservice.mapper.CategoryMapper;
 import com.example.restaurantservice.repository.CategoryRepository;
 import com.example.restaurantservice.service.impl.CategoryServiceImpl;
 import org.junit.Test;
